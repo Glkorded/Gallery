@@ -15,19 +15,27 @@ class Gallery extends Component {
         ];
 
         return (
+        <Router>
         <div>
             <h1>Gallery</h1>
-                <div className = "collection_images">
+                <div className="collection_images">
                     {imagesArray.map(image =>
-                        <Thumbnail key={image.id} imgUrl={require(`../Images/${image.title}.jpg`)} />
+                        <div>
+                            <Link to={`/gallery/${image.title}`}>
+                                <Thumbnail
+                                key={image.id}
+                                imgUrl={require(`../Images/${image.title}.jpg`)}
+                                />
+                            </Link>
+                        </div>
                     )}
                 </div>
-            <div className="collection_images">
-                {imagesArray.map(image =>
-                    <Image key={image.id} imgUrl={require(`../Images/${image.title}.jpg`)} />
-                )}
-            </div>
+            <Route
+                path={`/gallery/:imgUrl`}
+                exact component={Image}
+            />
         </div>
+        </Router>
         );
     }
 }

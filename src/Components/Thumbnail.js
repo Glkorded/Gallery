@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './thumbnail.css'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 class Thumbnail extends Component {
     constructor(props) {
@@ -9,11 +10,7 @@ class Thumbnail extends Component {
         }
     }
 
-    expandMethod = () => {
-        this.setState ({
-            thumbed: !this.state.thumbed
-        })
-    }
+
 
     render() {
         return (

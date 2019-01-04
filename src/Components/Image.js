@@ -1,13 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Image extends Component {
-    render() {
-        return (
+const Image = ({match}) =>
             <div>
-                <img src = {this.props.imgUrl} alt = 'ExpandedThumb'/>
+                <img
+                    src = {require(`../Images/${match.params.imgUrl}.jpg`)}
+                    alt = 'Fullsize'
+                />
             </div>
-        );
-    }
-}
 
 export default Image;
