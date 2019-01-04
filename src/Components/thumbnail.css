@@ -1,0 +1,11 @@
+.thumbnail-wrapper {
+    width: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+.thumbnail {
+    width: auto;
+    height: 150px;
+}

@@ -1,0 +1,4 @@
+.collection_images {
+    display: flex;
+    justify-content: space-evenly;
+}
