@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Thumbnail from './Thumbnail'
 import Image from './Image'
 import './gallery.css'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 
 class Gallery extends Component {
     render() {
@@ -21,7 +21,7 @@ class Gallery extends Component {
                 <div className="collection_images">
                     {imagesArray.map(image =>
                         <div>
-                            <Link to={`/gallery/${image.title}`}>
+                            <Link to={`/image/${image.title}`}>
                                 <Thumbnail
                                 key={image.id}
                                 imgUrl={require(`../Images/${image.title}.jpg`)}
@@ -29,11 +29,13 @@ class Gallery extends Component {
                             </Link>
                         </div>
                     )}
+                    <Switch>
+                    <Route
+                        path="/image/:imgUrl"
+                        exact component={Image}
+                    />
+                    </Switch>
                 </div>
-            <Route
-                path={`/gallery/:imgUrl`}
-                exact component={Image}
-            />
         </div>
         </Router>
         );

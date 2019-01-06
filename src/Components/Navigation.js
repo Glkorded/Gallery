@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import React from 'react';
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import TodoList from './TodoList'
 import Gallery from "./Gallery";
+import Image from './Image'
 import './navigation.css'
 
-class Navigation extends Component {
-    render() {
-        return (
+const Navigation = () =>
             <Router>
                 <div>
                     <nav>
@@ -20,16 +19,29 @@ class Navigation extends Component {
                             <li className="navigation_list_element">
                                 <Link to="/todolist/">To-do List</Link>
                             </li>
+                            <li className="navigation_list_element">
+                                <Link to="/image/first">1</Link>
+                            </li>
+                            <li className="navigation_list_element">
+                                <Link to="/image/second">2</Link>
+                            </li>
                         </ul>
                     </nav>
-
-                <Route path="/gallery/" exact component={Gallery}/>
-                <Route path="/todolist/" exact component={TodoList}/>
+                    <Switch>
+                <Route
+                    path = "/image/:imgUrl"
+                    component = {Image}
+                />
+                <Route
+                    path="/gallery/"
+                    exact component={Gallery}
+                />
+                <Route
+                    path="/todolist/"
+                    exact component={TodoList}
+                />
+                    </Switch>
                 </div>
             </Router>
-        );
-    }
-}
-
 
 export default Navigation;

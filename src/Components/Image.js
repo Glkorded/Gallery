@@ -7,6 +7,7 @@ const Image = ({match}) =>
                     src = {require(`../Images/${match.params.imgUrl}.jpg`)}
                     alt = 'Fullsize'
                 />
+                <span>{match.params.imgUrl}</span>
             </div>
 
 export default Image;
