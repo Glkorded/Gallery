@@ -1,13 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Tags extends Component {
-    render() {
-        return (
+const Tags = ({tags}) =>
             <div>
-                <span>{this.props.tags}</span>
+                <a href='#'>{tags}</a>
             </div>
-        );
-    }
-}
 
 export default Tags;

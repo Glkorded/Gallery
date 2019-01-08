@@ -1,22 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './image.css'
 import Tags from './Tags'
-import imagesArray from './ImagesArray'
+import {imagesArray} from '../Constants/ImagesArray'
 
-const Image = ({match}) =>
-    <div>
-            <div>
-                <h2>{match.params.imgUrl}</h2>
-                <img className="fullsize_picture"
-                    src = {require(`../Images/${match.params.imgUrl}.jpg`)}
-                    alt = 'Fullsize'
-                />
+class Image extends Component {
 
-                <Tags
-                tags = 'hui'
-                />
-            </div>
-        <Tags/>
-    </div>;
+  render() {
+    const {match, location} = this.props
+      return (
+      <div>
+        <div>
+          <h2>{location.title}</h2>
+          <img className="fullsize_picture"
+               src={require(`../Images/${match.params.imgUrl}.jpg`)}
+               alt='Fullsize'
+          />
+          <Tags tags={location.tags}/>
+        </div>
+      </div>
+  )
+  }
+}
 
 export default Image;
