@@ -6,8 +6,8 @@ import './gallery.css'
 
 const editedLink = image => ({
   pathname: `/image/${image.id}`,
-  title: `${image.title}`,
-  tags: `${image.tags}`,
+  title: image.title,
+  tags: image.tags,
 })
 
 const Gallery = () =>

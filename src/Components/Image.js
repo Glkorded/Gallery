@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './image.css'
 import Tags from './Tags'
+import {Link} from 'react-router-dom'
 
 class Image extends Component {
 
@@ -10,7 +11,10 @@ class Image extends Component {
       <div>
         <div>
           <h2>{location.title}</h2>
-          <Tags tags={location.tags}/>
+          <Link to="../gallery/">Go back</Link>
+          {location.tags.map(singletag =>
+            <Tags tags={singletag}/>
+          )}
           <img className="fullsize_picture"
                src={require(`../Images/${match.params.imgUrl}.jpg`)}
                alt='Fullsize'
