@@ -15,7 +15,7 @@ const Gallery = () =>
     <h1>Gallery</h1>
     <div className="collection_images">
       {imagesArray.map(image =>
-        <div>
+        <div key = {image.id}>
           <Link to={editedLink(image)}>
             <Thumbnail
               key={image.id}
