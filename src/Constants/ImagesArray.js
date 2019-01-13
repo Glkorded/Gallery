@@ -1,17 +1,17 @@
 export const imagesArray = [
   {"id": "0",
    "title": "Aska",
-   "tags": ["anime", "aska", "redhead", "evangelion"]},
+   "tags": ["test", "anime", "aska", "redhead", "evangelion", "girl"]},
 
   {"id": "1",
    "title": "Turkish girl",
-   "tags": ["girl", "school", "red clothes"]},
+   "tags": ["test", "girl", "school", "red clothes"]},
 
   {"id": "2",
    "title": "Strange man",
-   "tags": ["conspiracy theory", "tinfoil hat"]},
+   "tags": ["test", "conspiracy theory", "tinfoil hat"]},
 
   {"id": "3",
    "title": "Mne pohui",
-   "tags": ["meme", "pig head", "sunglasses"]}
+   "tags": ["test", "meme", "pig head", "sunglasses"]}
 ];

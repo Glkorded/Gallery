@@ -5,6 +5,7 @@ import {Route, Switch} from "react-router-dom";
 import Gallery from "./Components/Gallery";
 import TodoList from "./Components/TodoList";
 import Image from "./Components/Image";
+import TagSearchPage from "./Components/TagSearchPage";
 
 
 class App extends Component {
@@ -23,6 +24,10 @@ class App extends Component {
           <Route
             path="/image/:imgUrl"
             exact component={Image}
+          />
+          <Route
+            path="/tags/:tagUrl"
+            exact component={TagSearchPage}
           />
         </Switch>
         <div>
