@@ -3,38 +3,29 @@ import {Link} from 'react-router-dom'
 import Thumbnail from './Thumbnail'
 import {imagesArray} from '../Constants/ImagesArray' //mocking JSON
 import './gallery.css'
-import Tags from "./Tags";
 
 class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = {searchedTag: ""}
+    this.state = {defaultGallery: ""}
   }
-  render() {
 
+  render() {
     const editedLink = image => ({
       pathname: `/image/${image.id}`,
       title: image.title,
       tags: image.tags,
     });
 
-    const someTags = (element) => element === this.state.searchedTag.toLowerCase();
-
-    const searchMethod = e => {
-      if (e.key == "Enter") {
-      this.setState({
-      searchedTag: e.target.value
-    })};
-  };
+    const someTags = (element) => (this.props.tagSearch === undefined) ? element === this.state.defaultGallery : element === this.props.tagSearch ; // функция для фильтра
 
     return (
       <div>
         <h1>Gallery</h1>
         <h4>You can click on every image to see it fullsize and it's tags, also you can search images by their tags</h4>
-        <input placeholder="Search for tags" onKeyPress={searchMethod}/>
         <div className="collection_images">
           {imagesArray.map(image =>
-            image.tags.some(someTags) ?
+            image.tags.some(someTags) ? // вот тут я попытался отфильтровывать галерею по выбранному тегу, но передача в метод пропса работает как-то мегахуево
               <div key={image.id}>
                 <Link to={editedLink(image)}>
                   <Thumbnail
