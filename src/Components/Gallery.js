@@ -3,11 +3,12 @@ import {Link} from 'react-router-dom'
 import Thumbnail from './Thumbnail'
 import {imagesArray} from '../Constants/ImagesArray' //mocking JSON
 import './gallery.css'
+import Tags from "./Tags";
 
 class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = {searchedTag: "test"}
+    this.state = {searchedTag: ""}
   }
   render() {
 
@@ -17,18 +18,20 @@ class Gallery extends Component {
       tags: image.tags,
     });
 
-    const someTags = (element) => element === this.state.searchedTag;
+    const someTags = (element) => element === this.state.searchedTag.toLowerCase();
 
     const searchMethod = e => {
+      if (e.key == "Enter") {
       this.setState({
       searchedTag: e.target.value
-    });
+    })};
   };
 
     return (
       <div>
         <h1>Gallery</h1>
-        <input placeholder="Search for tags" onChange={searchMethod}/>
+        <h4>You can click on every image to see it fullsize and it's tags, also you can search images by their tags</h4>
+        <input placeholder="Search for tags" onKeyPress={searchMethod}/>
         <div className="collection_images">
           {imagesArray.map(image =>
             image.tags.some(someTags) ?
@@ -39,7 +42,7 @@ class Gallery extends Component {
                     imgUrl={require(`../Images/${image.id}.jpg`)}
                   />
                 </Link>
-              </div> : <div>No such tags found</div>
+              </div> : <div key = {image.id} className={"hidden"}></div>
           )}
         </div>
       </div>

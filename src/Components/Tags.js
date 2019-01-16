@@ -1,4 +1,5 @@
 import React from 'react';
+import "./tags.css"
 import {Link} from 'react-router-dom'
 
 const editedLink = tag => ({
@@ -7,7 +8,7 @@ const editedLink = tag => ({
 
 const Tags = ({tags}) =>
   <div>
-      <Link to={editedLink(tags)}>{tags}</Link>
+      <Link className="tagsLink" to={editedLink(tags)}>{tags}</Link>
     {console.log({tags})}
   </div>;
 

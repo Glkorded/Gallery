@@ -12,9 +12,9 @@ class Image extends Component {
         <div>
           <h2>{location.title}</h2>
           <Link to="../gallery/">Go back</Link>
-          {location.tags.map(singletag =>
-            <Tags tags={singletag}/>
-          )}
+          Tags: {location.tags.map(singletag =>
+          <Tags tags={singletag}/>
+        )}
           <img className="fullsize_picture"
                src={require(`../Images/${match.params.imgUrl}.jpg`)}
                alt='Fullsize'

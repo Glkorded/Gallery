@@ -2,3 +2,12 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.hidden {
+    display: none;
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+}

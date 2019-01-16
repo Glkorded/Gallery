@@ -4,9 +4,8 @@ import Gallery from "./Gallery";
 const TagSearchPage = () =>
   <div>
     <Gallery
-    tags = "anime"
+    tagSearch = "anime"
     />
-    "hui"
   </div>;
 
 export default TagSearchPage
