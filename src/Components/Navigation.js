@@ -13,9 +13,6 @@ const Navigation = () =>
           <Link className="navigation_link" to="/gallery/">Gallery</Link>
         </li>
         <li className="navigation_list_element">
-          <Link className="navigation_link" to="/tags/">Tag Search</Link>
-        </li>
-        <li className="navigation_list_element">
           <Link className="navigation_link" to="/todolist/">To-do List</Link>
         </li>
       </ul>

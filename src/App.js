@@ -26,7 +26,7 @@ class App extends Component {
             exact component={Image}
           />
           <Route
-            path="/tags/"
+            path="/tags/:tagUrl"
             exact component={TagSearchPage}
           />
         </Switch>
