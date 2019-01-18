@@ -11,13 +11,13 @@ class Gallery extends Component {
   }
 
   render() {
+    const someTags = (element) => (this.props.tagSearch === undefined) ? element === this.state.defaultGallery : element === this.props.tagSearch ; // функция для фильтра
+
     const editedLink = image => ({
       pathname: `/image/${image.id}`,
       title: image.title,
       tags: image.tags,
     });
-
-    const someTags = (element) => (this.props.tagSearch === undefined) ? element === this.state.defaultGallery : element === this.props.tagSearch ; // функция для фильтра
 
     return (
       <div>
