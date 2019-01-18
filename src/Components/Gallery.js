@@ -22,7 +22,7 @@ class Gallery extends Component {
     return (
       <div>
         <h1>Gallery</h1>
-        <h4>You can click on every image to see it fullsize and it's tags</h4>
+        <h4>You can click on every image to see it fullsize and its tags</h4>
         <div className="container_images">
         <div className="collection_images">
           {imagesArray.map(image =>
