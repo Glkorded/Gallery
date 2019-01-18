@@ -33,7 +33,7 @@ class Gallery extends Component {
                     imgUrl={require(`../Images/${image.id}.jpg`)}
                   />
                 </Link>
-              </div> : <div key = {image.id} className={"hidden"}></div>
+              </div> : null
           )}
         </div>
       </div>
