@@ -1,6 +1,18 @@
+.container_images {
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
 .collection_images {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    flex-flow: wrap;
+    overflow: auto;
+}
+
+.single_image {
+    margin: 5px;
 }
 
 .hidden {

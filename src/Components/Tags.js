@@ -9,7 +9,6 @@ const editedLink = tag => ({
 const Tags = ({tags}) =>
   <div>
       <Link className="tagsLink" to={editedLink(tags)}>{tags}</Link>
-    {console.log({tags})}
   </div>;
 
 export default Tags;

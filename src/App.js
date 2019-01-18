@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-import './app.css'
-import Footer from "./Components/Footer";
 import {Route, Switch} from "react-router-dom";
-import Gallery from "./Components/Gallery";
+import Footer from "./Components/Footer";
 import TodoList from "./Components/TodoList";
-import Image from "./Components/Image";
 import TagSearchPage from "./Components/TagSearchPage";
-
+import Home from "./Components/Home";
+import Gallery from "./Components/Gallery";
+import Image from "./Components/Image";
+import './app.css'
 
 class App extends Component {
   render() {
     return (
       <div>
         <Switch>
+         <Route
+          path="/"
+          exact component={Home}
+          />
           <Route
             path="/gallery/"
             exact component={Gallery}
@@ -33,7 +37,6 @@ class App extends Component {
         <div>
           <Footer/>
         </div>
-
       </div>
     );
   }

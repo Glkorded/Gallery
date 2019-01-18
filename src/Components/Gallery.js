@@ -22,11 +22,12 @@ class Gallery extends Component {
     return (
       <div>
         <h1>Gallery</h1>
-        <h4>You can click on every image to see it fullsize and it's tags, also you can search images by their tags</h4>
+        <h4>You can click on every image to see it fullsize and it's tags</h4>
+        <div className="container_images">
         <div className="collection_images">
           {imagesArray.map(image =>
-            image.tags.some(someTags) ? // вот тут я попытался отфильтровывать галерею по выбранному тегу, но передача в метод пропса работает как-то мегахуево
-              <div key={image.id}>
+            image.tags.some(someTags) ?
+              <div className="single_image" key={image.id}>
                 <Link to={editedLink(image)}>
                   <Thumbnail
                     key={image.id}
@@ -35,6 +36,7 @@ class Gallery extends Component {
                 </Link>
               </div> : null
           )}
+        </div>
         </div>
       </div>
     )
